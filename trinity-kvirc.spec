@@ -1,11 +1,9 @@
 %bcond clang 1
 
 # TDE variables
-%define tde_epoch 2
 %if "%{?tde_version}" == ""
 %define tde_version 14.1.5
 %endif
-%define pkg_rel 2
 
 %define tde_pkg kvirc
 %define tde_prefix /opt/trinity
@@ -19,9 +17,8 @@
 
 
 Name:		trinity-%{tde_pkg}
-Epoch:		%{tde_epoch}
 Version:	3.4.0
-Release:	%{?tde_version}_%{?!preversion:%{pkg_rel}}%{?preversion:0_%{preversion}}%{?dist}
+Release:	%{?tde_version:%{tde_version}_}3
 Summary:	Trinity based next generation IRC client with module support
 Group:		Applications/Utilities
 URL:		http://kvirc.net/
